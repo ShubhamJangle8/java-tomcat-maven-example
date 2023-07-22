@@ -33,12 +33,12 @@ pipeline {
         }
         stage("deploy"){
             steps {
-                sh "sudo cp /var/lib/jenkins/workspace/jenkinsPipeline/target/ABCtechnologies-1.0.war /usr/share/tomcat/webapps/"
+                sh "sudo cp /var/lib/jenkins/workspace/jenkinsPipeline/target/java-tomcat-maven-example.war /usr/share/tomcat/webapps/"
             }
         }
         stage("docker build"){
             steps {
-                sh "docker build . -t image-java-tomcat:latest"
+                sh "docker build . -t image-java-tomcat-maven:latest"
             }
         }
     }
